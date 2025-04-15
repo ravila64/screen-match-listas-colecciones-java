@@ -70,7 +70,7 @@ public class Principal {
         for (int i = 0; i < listaPeliculas.size(); i++) {
             System.out.println("metodo toString de "+listaPeliculas.get(i).toString());
         }
-        // pasar un ArrayList a un Array
+        // pasar un ArrayList a un Array, segun documentacion de java y LURI
         int elementosLista = listaPeliculas.size();
         Pelicula[] array = new Pelicula[elementosLista];
         array = listaPeliculas.toArray(array);
