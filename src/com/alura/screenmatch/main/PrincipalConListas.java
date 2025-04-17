@@ -5,6 +5,7 @@ import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -30,6 +31,7 @@ public class PrincipalConListas {
             System.out.println(item.getNombre());
             if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2) {
                 //Pelicula pelicula = (Pelicula) item;
+                //if esta esta esta asignacion
                 System.out.println(pelicula.getClasificacion());
             }
         }
@@ -38,5 +40,26 @@ public class PrincipalConListas {
         // tercera forma de imprimir con forEach
         // utilizando el recurso conocido como Method Reference
         //lista.forEach(System.out::println);
+        // ORDENANDO LISTAS
+        ArrayList<String> listaArtistas=new ArrayList<>();
+        listaArtistas.add("Jeniffer Alison");
+        listaArtistas.add("Tom Cruise");
+        listaArtistas.add("Angelina Jolie");
+        listaArtistas.add("Scarlet Johansson");
+        listaArtistas.add("Penelope Cruz");
+        listaArtistas.add("Natalie Portman");
+        System.out.println("Lista desordenada ");
+        for (String listaArtista : listaArtistas) {
+            System.out.println(" -->"+listaArtista);
+        }
+        Collections.sort(listaArtistas);
+        System.out.println("Lista ordenada "+listaArtistas);
+
+        // ordenar objectos
+        Collections.sort(lista);
+        System.out.println("Lista de titulos ordenada ");
+        for (Titulo item : lista) {
+            System.out.println(item.toString());
+        }
     }
 }
