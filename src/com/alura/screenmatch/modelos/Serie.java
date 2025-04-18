@@ -50,8 +50,8 @@ public class Serie extends Titulo {
     @Override   // lo coloque pero no estaba en la clase dada por el teacher
     public String toString() {
         return "Serie{" +
-                "Nombre=" + getNombre() +
-                ", Fecha Lanzamiento "+getFechaDeLanzamiento()+
-                '}';
+                " Nombre=" + getNombre() +
+                " Fecha Lanzamiento "+getFechaDeLanzamiento()+
+                '}'+"\n";
     }
 }

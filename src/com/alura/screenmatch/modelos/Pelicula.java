@@ -24,10 +24,10 @@ public class Pelicula extends Titulo implements Clasificable {
     @Override
     public String toString() {
         return "Pelicula{" +
-                "Nombre='" + getNombre() + '\'' +
-                ", FechaDeLanzamiento=" + getFechaDeLanzamiento() +
-                ", DuracionEnMinutos=" + getDuracionEnMinutos() +
-                '}';
+                "Nombre='" + getNombre() +
+                " Fecha De Lanzamiento=" + getFechaDeLanzamiento() +
+                " Duracion En Minutos=" + getDuracionEnMinutos() +
+                '}'+"\n";
     }
 
 }

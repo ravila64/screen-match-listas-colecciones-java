@@ -4,8 +4,10 @@ import com.alura.screenmatch.modelos.Pelicula;
 import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -41,7 +43,7 @@ public class PrincipalConListas {
         // utilizando el recurso conocido como Method Reference
         //lista.forEach(System.out::println);
         // ORDENANDO LISTAS
-        ArrayList<String> listaArtistas=new ArrayList<>();
+        ArrayList<String> listaArtistas = new ArrayList<>();
         listaArtistas.add("Jeniffer Alison");
         listaArtistas.add("Tom Cruise");
         listaArtistas.add("Angelina Jolie");
@@ -50,10 +52,10 @@ public class PrincipalConListas {
         listaArtistas.add("Natalie Portman");
         System.out.println("Lista desordenada ");
         for (String listaArtista : listaArtistas) {
-            System.out.println(" -->"+listaArtista);
+            System.out.println(" -->" + listaArtista);
         }
         Collections.sort(listaArtistas);
-        System.out.println("Lista ordenada "+listaArtistas);
+        System.out.println("Lista ordenada " + listaArtistas);
 
         // ordenar objectos
         Collections.sort(lista);
@@ -61,5 +63,10 @@ public class PrincipalConListas {
         for (Titulo item : lista) {
             System.out.println(item.toString());
         }
+
+        // Comparator   ordena por fecha de lanzamiento
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        System.out.println("Comparator-Lista ordenada por fecha lanzamiento "+"\n"+lista);
     }
+
 }
