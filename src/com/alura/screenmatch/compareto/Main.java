@@ -11,8 +11,13 @@ public class Main {
         cuentas.add(new Cuenta("Beatriz", 385000));
         cuentas.add(new Cuenta("Luis",185000));
         cuentas.add(new Cuenta("Rene",400000));
-        cuentas.sort(Comparator.comparing(Cuenta::getSaldo));
+        //cuentas.sort(Comparator.comparing(Cuenta::getSaldo));
+        cuentas.sort(Comparator.comparing(Cuenta::getSaldo).reversed());
         System.out.println("lista cuentas descendente por Saldo ");
-        System.out.println(cuentas.toString());
+        //System.out.println(cuentas.toString());
+        System.out.println("numero de cuentas :"+cuentas.size());
+        for (Cuenta cuenta : cuentas) {
+            System.out.println(cuenta.getTitular() + ": " + cuenta.getSaldo());
+        }
     }
 }

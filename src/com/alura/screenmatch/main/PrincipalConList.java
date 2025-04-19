@@ -4,11 +4,9 @@ import com.alura.screenmatch.modelos.Pelicula;
 import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
-public class PrincipalConListas {
+public class PrincipalConList {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula("Encanto", 2021);
         miPelicula.setDuracionEnMinutos(180);
@@ -29,20 +27,22 @@ public class PrincipalConListas {
         lista.add(lost);
 
         for (Titulo item : lista) {
-            System.out.println(item.getNombre());
+            System.out.print(item.getNombre()+" Clasificacion ");
             if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2) {
                 //Pelicula pelicula = (Pelicula) item;
-                //if esta esta esta asignacion
+                //if esta asignacion
                 System.out.println(pelicula.getClasificacion());
             }
         }
-        // otra forma de listar con forEach
+        System.out.println("otra forma de listar con forEach");
         lista.forEach(item -> System.out.println(item.toString()));
         // tercera forma de imprimir con forEach
         // utilizando el recurso conocido como Method Reference
         //lista.forEach(System.out::println);
         // ORDENANDO LISTAS
-        ArrayList<String> listaArtistas = new ArrayList<>();
+        //ArrayList<String> listaArtistas = new ArrayList<>();  // original
+        List<String> listaArtistas = new LinkedList<>();
+        // se hizo cambio de ArrayList x List
         listaArtistas.add("Jeniffer Alison");
         listaArtistas.add("Tom Cruise");
         listaArtistas.add("Angelina Jolie");
@@ -63,7 +63,7 @@ public class PrincipalConListas {
             System.out.println(item.toString());
         }
 
-        // Comparator   ordena por fecha de lanzamiento
+        // Comparator ordena por fecha de lanzamiento
         lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
         System.out.println("Comparator-Lista ordenada por fecha lanzamiento "+"\n"+lista);
     }
